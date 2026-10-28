@@ -1,0 +1,90 @@
+body {
+    background-color: pink;
+}
+
+#playing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ---------- Card base ---------- */
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: 225px;
+    height: 325px;
+    margin: 20px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 2px 2px grey;
+}
+
+.red {
+    color: red;
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+/* ---------- Corner indexes ---------- */
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    font-size: 27px;
+    line-height: 1;
+}
+
+.left {
+    align-self: flex-start;
+    margin-left: 4px;
+}
+
+.right {
+    align-self: flex-end;
+    margin-right: 4px;
+    transform: rotate(180deg);
+}
+
+/* ---------- Center area ---------- */
+.middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 58px;
+}
+
+.card3 .middle {
+    font-size: 84px;
+}
+
+/* ---------- Grid layouts (cards 4 and 5) ---------- */
+.card4 .middle,
+.card5 .middle {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-self: center;
+    justify-content: center;
+    font-size: 75px;
+    line-height: 1;
+}
+
+.card4 .middle {
+    row-gap: 25px;
+}
+
+.card5 .middle {
+    row-gap: 30px;
+}
+
+/* Center pip of the five */
+.card5 .middle> :nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
